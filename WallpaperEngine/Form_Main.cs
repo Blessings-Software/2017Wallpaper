@@ -25,7 +25,7 @@ namespace YoutubeWallpaper
 
         //#########################################################################################################
 
-        protected readonly string AppName = "NeuroWhAI_YoutubeWallpaper";
+        protected readonly string AppName = "NeuroWhAI_YomnWallpaper";
 
         protected readonly string OptionFile = Path.Combine(Application.StartupPath, "Option.dat");
         protected Option m_option = new Option();
