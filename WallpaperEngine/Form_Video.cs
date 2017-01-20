@@ -35,11 +35,7 @@ namespace YoutubeWallpaper
         //#############################################################################################
         public static string video_path = "";
         private int m_Volume = 100;
-        public int Volume
-        {
-            get { return m_Volume; }
-            set { axWindowsMediaPlayer1.settings.volume = value; m_Volume = value; }
-        }
+        
         private bool m_isFixed = false;
         public bool IsFixed
         { get { return m_isFixed; } }
@@ -52,7 +48,7 @@ namespace YoutubeWallpaper
                 webBrowser_page.Navigate(value);
             }
         }
-
+        */
         private int m_latestVolume = 100;
         public int Volume
         {
@@ -69,7 +65,7 @@ namespace YoutubeWallpaper
                 WinApi.waveOutSetVolume(IntPtr.Zero, (vol << 16) | vol);
             }
         }
-        */
+        
         private IntPtr m_playerHandle = IntPtr.Zero;
         private IntPtr PlayerHandle
         {

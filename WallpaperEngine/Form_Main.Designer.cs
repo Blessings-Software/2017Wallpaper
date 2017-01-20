@@ -80,20 +80,23 @@
             this.button1 = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnOpen = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.lblVDuration = new System.Windows.Forms.Label();
+            this.lblVTitle = new System.Windows.Forms.Label();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.listView2 = new System.Windows.Forms.ListView();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.trkVideoVolume = new System.Windows.Forms.TrackBar();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnOpen = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -105,11 +108,11 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.groupBox6.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trkVideoVolume)).BeginInit();
-            this.groupBox8.SuspendLayout();
-            this.groupBox9.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -638,49 +641,80 @@
             this.tabPage2.Text = "Video";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // groupBox9
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 17);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 12);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "File Path";
+            this.groupBox9.Controls.Add(this.lblVDuration);
+            this.groupBox9.Controls.Add(this.lblVTitle);
+            this.groupBox9.Location = new System.Drawing.Point(8, 217);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(294, 92);
+            this.groupBox9.TabIndex = 8;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Video Information";
             // 
-            // button2
+            // lblVDuration
             // 
-            this.button2.Location = new System.Drawing.Point(8, 315);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Start";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.lblVDuration.AutoSize = true;
+            this.lblVDuration.Location = new System.Drawing.Point(12, 43);
+            this.lblVDuration.Name = "lblVDuration";
+            this.lblVDuration.Size = new System.Drawing.Size(87, 12);
+            this.lblVDuration.TabIndex = 1;
+            this.lblVDuration.Text = "Video Duration";
             // 
-            // btnOpen
+            // lblVTitle
             // 
-            this.btnOpen.Location = new System.Drawing.Point(8, 32);
-            this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(75, 23);
-            this.btnOpen.TabIndex = 0;
-            this.btnOpen.Text = "Open(&O)";
-            this.btnOpen.UseVisualStyleBackColor = true;
-            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
+            this.lblVTitle.AutoSize = true;
+            this.lblVTitle.Location = new System.Drawing.Point(12, 17);
+            this.lblVTitle.Name = "lblVTitle";
+            this.lblVTitle.Size = new System.Drawing.Size(65, 12);
+            this.lblVTitle.TabIndex = 0;
+            this.lblVTitle.Text = "Video Title";
             // 
-            // openFileDialog1
+            // groupBox8
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.groupBox8.Controls.Add(this.button4);
+            this.groupBox8.Controls.Add(this.button3);
+            this.groupBox8.Location = new System.Drawing.Point(16, 160);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(286, 51);
+            this.groupBox8.TabIndex = 7;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Controller";
             // 
-            // groupBox6
+            // button4
             // 
-            this.groupBox6.Controls.Add(this.label2);
-            this.groupBox6.Controls.Add(this.btnOpen);
-            this.groupBox6.Location = new System.Drawing.Point(8, 6);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(294, 65);
-            this.groupBox6.TabIndex = 3;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Open video";
+            this.button4.Location = new System.Drawing.Point(144, 20);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(136, 23);
+            this.button4.TabIndex = 1;
+            this.button4.Text = "Play";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(6, 20);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(132, 23);
+            this.button3.TabIndex = 0;
+            this.button3.Text = "Pause";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(308, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 12);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Recent Video";
+            // 
+            // listView2
+            // 
+            this.listView2.Location = new System.Drawing.Point(308, 23);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(252, 315);
+            this.listView2.TabIndex = 5;
+            this.listView2.UseCompatibleStateImageBehavior = false;
             // 
             // groupBox7
             // 
@@ -695,74 +729,76 @@
             // trkVideoVolume
             // 
             this.trkVideoVolume.Location = new System.Drawing.Point(8, 20);
+            this.trkVideoVolume.Maximum = 100;
             this.trkVideoVolume.Name = "trkVideoVolume";
             this.trkVideoVolume.Size = new System.Drawing.Size(280, 45);
             this.trkVideoVolume.TabIndex = 0;
+            this.trkVideoVolume.Scroll += new System.EventHandler(this.trkVideoVolume_Scroll);
             // 
-            // listView2
+            // groupBox6
             // 
-            this.listView2.Location = new System.Drawing.Point(308, 23);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(252, 315);
-            this.listView2.TabIndex = 5;
-            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.groupBox6.Controls.Add(this.button6);
+            this.groupBox6.Controls.Add(this.button5);
+            this.groupBox6.Controls.Add(this.label2);
+            this.groupBox6.Controls.Add(this.btnOpen);
+            this.groupBox6.Location = new System.Drawing.Point(8, 6);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(294, 65);
+            this.groupBox6.TabIndex = 3;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Open video";
             // 
-            // label3
+            // label2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(308, 8);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 12);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Recent Video";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 12);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "File Path";
             // 
-            // groupBox8
+            // btnOpen
             // 
-            this.groupBox8.Controls.Add(this.button4);
-            this.groupBox8.Controls.Add(this.button3);
-            this.groupBox8.Location = new System.Drawing.Point(16, 160);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(286, 51);
-            this.groupBox8.TabIndex = 7;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Controller";
+            this.btnOpen.Location = new System.Drawing.Point(8, 32);
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.Size = new System.Drawing.Size(75, 23);
+            this.btnOpen.TabIndex = 0;
+            this.btnOpen.Text = "Open(&O)";
+            this.btnOpen.UseVisualStyleBackColor = true;
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
-            // button3
+            // button2
             // 
-            this.button3.Location = new System.Drawing.Point(6, 20);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(132, 23);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Pause";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button2.Location = new System.Drawing.Point(8, 315);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Start";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button4
+            // openFileDialog1
             // 
-            this.button4.Location = new System.Drawing.Point(144, 20);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(136, 23);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Play";
-            this.button4.UseVisualStyleBackColor = true;
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // groupBox9
+            // button5
             // 
-            this.groupBox9.Controls.Add(this.label4);
-            this.groupBox9.Location = new System.Drawing.Point(8, 217);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(294, 92);
-            this.groupBox9.TabIndex = 8;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Video Information";
+            this.button5.Location = new System.Drawing.Point(170, 32);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(118, 23);
+            this.button5.TabIndex = 3;
+            this.button5.Text = "Subtitle Open";
+            this.button5.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // button6
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 17);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 12);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "label4";
+            this.button6.Location = new System.Drawing.Point(89, 32);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 4;
+            this.button6.Text = "Online";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // Form_Main
             // 
@@ -800,14 +836,14 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trkVideoVolume)).EndInit();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -878,7 +914,10 @@
         private System.Windows.Forms.TrackBar trkVideoVolume;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblVTitle;
+        private System.Windows.Forms.Label lblVDuration;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
     }
 }
 

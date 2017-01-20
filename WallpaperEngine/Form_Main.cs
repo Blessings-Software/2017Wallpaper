@@ -678,6 +678,7 @@ namespace YoutubeWallpaper
         {
             openFileDialog1.ShowDialog();
             videopath = openFileDialog1.FileName;
+            listView2.Items.Add(videopath);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -698,6 +699,17 @@ namespace YoutubeWallpaper
         }
 
         private void 새재생목록ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trkVideoVolume_Scroll(object sender, EventArgs e)
+        {
+            if (m_Video != null)
+                m_Video.Volume = trkVideoVolume.Value;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
         {
 
         }
