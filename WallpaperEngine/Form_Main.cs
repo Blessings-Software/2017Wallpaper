@@ -25,7 +25,7 @@ namespace YoutubeWallpaper
 
         //#########################################################################################################
 
-        protected readonly string AppName = "NeuroWhAI_YomnWallpaper";
+        protected readonly string AppName = "Wallpaper_Engine";
 
         protected readonly string OptionFile = Path.Combine(Application.StartupPath, "Option.dat");
         protected Option m_option = new Option();
@@ -480,11 +480,8 @@ namespace YoutubeWallpaper
         private void button_apply_Click(object sender, EventArgs e)
         {
             SaveOption();
-
-
+            //RecentData.Recent.Add(listView1.SelectedItems[0].Text,listView1.SelectedItems[0].Name); //Title, VideoID
             StopWallpaper();
-
-
             PlayWallpaper();
         }
 
@@ -671,7 +668,7 @@ namespace YoutubeWallpaper
             {
                 // YouTube 비디오 Play를 위한 URL 생성 
                 string videoId = listView1.SelectedItems[0].Name;
-                string youtubeUrl = "http://youtube.com/watch?v=" + videoId;
+                //string youtubeUrl = "http://youtube.com/watch?v=" + videoId;
 
                 textBox_id.Text = videoId;
             }
@@ -698,6 +695,11 @@ namespace YoutubeWallpaper
            // }
 
             
+        }
+
+        private void 새재생목록ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

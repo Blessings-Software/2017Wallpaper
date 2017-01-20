@@ -58,7 +58,7 @@
             this.ToolStripMenuItem_nextScreen = new System.Windows.Forms.ToolStripMenuItem();
             this.youtubeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.로그인ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.새재생목록ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.재생목록ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon_tray = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip_tray = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ToolStripMenuItem_openController = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,6 +84,16 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnOpen = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.trkVideoVolume = new System.Windows.Forms.TrackBar();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -95,6 +105,11 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trkVideoVolume)).BeginInit();
+            this.groupBox8.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -293,7 +308,7 @@
             this.menuStrip_top.Location = new System.Drawing.Point(0, 0);
             this.menuStrip_top.Name = "menuStrip_top";
             this.menuStrip_top.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip_top.Size = new System.Drawing.Size(595, 24);
+            this.menuStrip_top.Size = new System.Drawing.Size(591, 24);
             this.menuStrip_top.TabIndex = 5;
             this.menuStrip_top.Text = "menuStrip1";
             // 
@@ -380,7 +395,7 @@
             // 
             this.youtubeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.로그인ToolStripMenuItem,
-            this.새재생목록ToolStripMenuItem});
+            this.재생목록ToolStripMenuItem});
             this.youtubeToolStripMenuItem.Name = "youtubeToolStripMenuItem";
             this.youtubeToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.youtubeToolStripMenuItem.Text = "Youtube";
@@ -388,14 +403,15 @@
             // 로그인ToolStripMenuItem
             // 
             this.로그인ToolStripMenuItem.Name = "로그인ToolStripMenuItem";
-            this.로그인ToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.로그인ToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.로그인ToolStripMenuItem.Text = "로그인";
             // 
-            // 새재생목록ToolStripMenuItem
+            // 재생목록ToolStripMenuItem
             // 
-            this.새재생목록ToolStripMenuItem.Name = "새재생목록ToolStripMenuItem";
-            this.새재생목록ToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
-            this.새재생목록ToolStripMenuItem.Text = "새 재생 목록";
+            this.재생목록ToolStripMenuItem.Name = "재생목록ToolStripMenuItem";
+            this.재생목록ToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.재생목록ToolStripMenuItem.Text = "최근 재생한 목록";
+            this.재생목록ToolStripMenuItem.Click += new System.EventHandler(this.새재생목록ToolStripMenuItem_Click);
             // 
             // notifyIcon_tray
             // 
@@ -607,9 +623,13 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.label2);
+            this.tabPage2.Controls.Add(this.groupBox9);
+            this.tabPage2.Controls.Add(this.groupBox8);
+            this.tabPage2.Controls.Add(this.label3);
+            this.tabPage2.Controls.Add(this.listView2);
+            this.tabPage2.Controls.Add(this.groupBox7);
+            this.tabPage2.Controls.Add(this.groupBox6);
             this.tabPage2.Controls.Add(this.button2);
-            this.tabPage2.Controls.Add(this.btnOpen);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -621,7 +641,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 11);
+            this.label2.Location = new System.Drawing.Point(6, 17);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 12);
             this.label2.TabIndex = 2;
@@ -639,7 +659,7 @@
             // 
             // btnOpen
             // 
-            this.btnOpen.Location = new System.Drawing.Point(576, 6);
+            this.btnOpen.Location = new System.Drawing.Point(8, 32);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(75, 23);
             this.btnOpen.TabIndex = 0;
@@ -651,11 +671,104 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.label2);
+            this.groupBox6.Controls.Add(this.btnOpen);
+            this.groupBox6.Location = new System.Drawing.Point(8, 6);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(294, 65);
+            this.groupBox6.TabIndex = 3;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Open video";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.trkVideoVolume);
+            this.groupBox7.Location = new System.Drawing.Point(8, 77);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(294, 77);
+            this.groupBox7.TabIndex = 4;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Volume";
+            // 
+            // trkVideoVolume
+            // 
+            this.trkVideoVolume.Location = new System.Drawing.Point(8, 20);
+            this.trkVideoVolume.Name = "trkVideoVolume";
+            this.trkVideoVolume.Size = new System.Drawing.Size(280, 45);
+            this.trkVideoVolume.TabIndex = 0;
+            // 
+            // listView2
+            // 
+            this.listView2.Location = new System.Drawing.Point(308, 23);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(252, 315);
+            this.listView2.TabIndex = 5;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(308, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 12);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Recent Video";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.button4);
+            this.groupBox8.Controls.Add(this.button3);
+            this.groupBox8.Location = new System.Drawing.Point(16, 160);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(286, 51);
+            this.groupBox8.TabIndex = 7;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Controller";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(6, 20);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(132, 23);
+            this.button3.TabIndex = 0;
+            this.button3.Text = "Pause";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(144, 20);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(136, 23);
+            this.button4.TabIndex = 1;
+            this.button4.Text = "Play";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.label4);
+            this.groupBox9.Location = new System.Drawing.Point(8, 217);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(294, 92);
+            this.groupBox9.TabIndex = 8;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Video Information";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 17);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 12);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "label4";
+            // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(595, 414);
+            this.ClientSize = new System.Drawing.Size(591, 414);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip_top);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -687,6 +800,14 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trkVideoVolume)).EndInit();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -746,8 +867,18 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ToolStripMenuItem youtubeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 로그인ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 새재생목록ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 재생목록ToolStripMenuItem;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.TrackBar trkVideoVolume;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.Label label4;
     }
 }
 
