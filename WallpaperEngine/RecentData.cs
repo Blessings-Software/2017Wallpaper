@@ -8,6 +8,6 @@ namespace YoutubeWallpaper
 {
     class RecentData
     {
-        public static Dictionary<string, string> Recent;
+       // public static Dictionary<string, string> Recent;
     }
 }

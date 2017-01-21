@@ -34,7 +34,7 @@ namespace YoutubeWallpaper
 
         //#############################################################################################
         public static string video_path = "";
-        private int m_Volume = 100;
+        //private int m_Volume = 100;
         
         private bool m_isFixed = false;
         public bool IsFixed
@@ -54,18 +54,36 @@ namespace YoutubeWallpaper
         {
             get
             {
-                WinApi.waveOutGetVolume(IntPtr.Zero, out uint temp);
-                return (int)((double)(temp & 0xFFFF) * 100 / 0xFFFF);
+                //WinApi.waveOutGetVolume(IntPtr.Zero, out uint temp);
+                return axWindowsMediaPlayer1.settings.volume;
             }
             set
             {
                 m_latestVolume = value;
 
-                uint vol = (uint)((double)0xFFFF * value / 100) & 0xFFFF;
-                WinApi.waveOutSetVolume(IntPtr.Zero, (vol << 16) | vol);
+                //uint vol = (uint)((double)0xFFFF * value / 100) & 0xFFFF;
+                axWindowsMediaPlayer1.settings.volume = value;
             }
         }
-        
+
+        public string Caption
+        {
+            set
+            {
+                axWindowsMediaPlayer1.closedCaption.SAMIFileName = value;
+            }
+        }
+
+        public void play()
+        {
+            axWindowsMediaPlayer1.Ctlcontrols.play();
+        }
+
+        public void pause()
+        {
+            axWindowsMediaPlayer1.Ctlcontrols.pause();
+        }
+
         private IntPtr m_playerHandle = IntPtr.Zero;
         private IntPtr PlayerHandle
         {
@@ -340,6 +358,16 @@ namespace YoutubeWallpaper
 
 
         private void Form_Wallpaper_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void axWindowsMediaPlayer1_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
         {
 
         }

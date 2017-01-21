@@ -13,6 +13,7 @@ using System.Net;
 using System.Diagnostics;
 using Google.Apis.YouTube.v3;
 using Google.Apis.Services;
+using WMPLib;
 
 namespace YoutubeWallpaper
 {
@@ -100,7 +101,7 @@ namespace YoutubeWallpaper
             {
                 m_touchpad.Target = m_wallpaper;
             }
-            
+
         }
 
         //#########################################################################################################
@@ -202,7 +203,7 @@ namespace YoutubeWallpaper
                 // 안하면 월페이퍼가 포커스를 가져서 조작이 이상해짐.
                 this.Select();
             }
-            if(m_Video != null)
+            if (m_Video != null)
             {
                 m_Video.TogglePlay();
                 Select();
@@ -217,7 +218,7 @@ namespace YoutubeWallpaper
                 m_wallpaper.Dispose();
                 m_wallpaper = null;
             }
-            if(m_Video != null)
+            if (m_Video != null)
             {
                 m_Video.Close();
                 m_Video.Dispose();
@@ -253,14 +254,14 @@ namespace YoutubeWallpaper
                 {
                     MessageBox.Show("배경화면을 설정할 수 없습니다.", "Error!",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    
+
                     StopWallpaper();
                 }
             }
-            if(m_Video != null)
+            if (m_Video != null)
             {
                 m_Video.OwnerScreenIndex++;
-                if(m_Video.IsFixed)
+                if (m_Video.IsFixed)
                 {
                     m_option.ScreenIndex = m_Video.OwnerScreenIndex;
                     m_option.SaveToFile(OptionFile);
@@ -424,7 +425,7 @@ namespace YoutubeWallpaper
                 m_wallpaper.AutoMute = (job == Option.Job.Mute);
                 m_wallpaper.AutoTogglePlay = (job == Option.Job.Toggle);
             }
-            if(m_Video != null)
+            if (m_Video != null)
             {
                 m_Video.AutoMute = (job == Option.Job.Mute);
                 m_Video.AutoTogglePlay = (job == Option.Job.Toggle);
@@ -609,7 +610,7 @@ namespace YoutubeWallpaper
         }
 
         //#########################################################################################################
-        
+
         private void textBox_id_TextChanged(object sender, EventArgs e)
         {
             ApplyOptionFromYoutubeUrl(this.textBox_id.Text);
@@ -678,7 +679,19 @@ namespace YoutubeWallpaper
         {
             openFileDialog1.ShowDialog();
             videopath = openFileDialog1.FileName;
+            label2.Text = videopath;
+            //lblVTitle
             listView2.Items.Add(videopath);
+            lblVTitle.Text = Path.GetFileNameWithoutExtension(videopath);
+            lblVDuration.Text = Duration(videopath).ToString();
+        }
+
+        public Double Duration(String file)
+        {
+            WindowsMediaPlayer wmp = new WindowsMediaPlayerClass();
+            IWMPMedia mediainfo = wmp.newMedia(file);
+            return mediainfo.duration;
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -690,12 +703,12 @@ namespace YoutubeWallpaper
             m_Video.Show();
 
 
-           // if (m_touchpad != null)
-           // {
-           //     m_touchpad.Target = m_Video;
-           // }
+            // if (m_touchpad != null)
+            // {
+            //     m_touchpad.Target = m_Video;
+            // }
 
-            
+
         }
 
         private void 새재생목록ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -712,6 +725,39 @@ namespace YoutubeWallpaper
         private void button6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (m_Video != null)
+                m_Video.pause();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (m_Video != null)
+                m_Video.play();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView2_DoubleClick(object sender, EventArgs e)
+        {
+            if(listView2.SelectedItems.Count > 0)
+            {
+                videopath = listView2.SelectedItems[0].Text;
+                label2.Text = videopath;
+                lblVTitle.Text = Path.GetFileNameWithoutExtension(videopath);
+                lblVDuration.Text = Duration(videopath).ToString();
+            }
         }
     }
 }
