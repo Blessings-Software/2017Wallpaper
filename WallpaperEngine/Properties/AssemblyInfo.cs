@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 // 어셈블리에 대한 일반 정보는 다음 특성 집합을 통해 
 // 제어됩니다. 어셈블리와 관련된 정보를 수정하려면
 // 이러한 특성 값을 변경하세요.
-[assembly: AssemblyTitle("YoutubeWallpaper")]
-[assembly: AssemblyDescription("YoutubeWallpaper - NeuroWhAI")]
+[assembly: AssemblyTitle("Wallpaper")]
+[assembly: AssemblyDescription("Wallpaper")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("NeuroWhAI")]
-[assembly: AssemblyProduct("YoutubeWallpaper")]
-[assembly: AssemblyCopyright("Copyright © NeuroWhAI 2016")]
-[assembly: AssemblyTrademark("NeuroWhAI")]
+[assembly: AssemblyCompany("AnA")]
+[assembly: AssemblyProduct("Wallpaper")]
+[assembly: AssemblyCopyright("Copyright © AnA 2017")]
+[assembly: AssemblyTrademark("AnA")]
 [assembly: AssemblyCulture("")]
 
 // ComVisible을 false로 설정하면 이 어셈블리의 형식이 COM 구성 요소에 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // 모든 값을 지정하거나 아래와 같이 '*'를 사용하여 빌드 번호 및 수정 번호가 자동으로 
 // 지정되도록 할 수 있습니다.
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.1.0.0")]
+[assembly: AssemblyVersion("2.1.*")]
 [assembly: AssemblyFileVersion("2.1.0.0")]

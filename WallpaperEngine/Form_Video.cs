@@ -31,11 +31,29 @@ namespace YoutubeWallpaper
 
             PinToBackground();
         }
-
+        #region public_variables
         //#############################################################################################
         public static string video_path = "";
         //private int m_Volume = 100;
-        
+        private static bool m_Repeat = false;
+        public bool Repeat
+        {
+            get
+            {
+                return m_Repeat;
+            }
+            set
+            {
+                if (m_Repeat)
+                {
+                    m_Repeat = false;
+                }
+                else
+                {
+                    m_Repeat = true;
+                }
+            }
+        }
         private bool m_isFixed = false;
         public bool IsFixed
         { get { return m_isFixed; } }
@@ -110,7 +128,7 @@ namespace YoutubeWallpaper
                 if (m_ownerScreenIndex != value)
                 {
                     m_ownerScreenIndex = value;
-                    
+
                     PinToBackground();
                 }
             }
@@ -141,7 +159,7 @@ namespace YoutubeWallpaper
 
         private readonly object m_lockFlag = new object();
         private bool m_needUpdate = false;
-
+    #endregion
         //private bool m_wasOverlayed = false;
 
         //#############################################################################################
@@ -159,36 +177,6 @@ namespace YoutubeWallpaper
 
             return flash;
         }
-
-        //public void ShowCursor(bool bShow)
-        //{
-        //    this.panel_cursor.Visible = bShow;
-        //}
-
-        //public void MoveCursor(int x, int y)
-        //{
-        //    this.panel_cursor.Location = new Point(x - this.panel_cursor.Width / 2,
-        //        y - this.panel_cursor.Height / 2);
-        //}
-
-        //public void PerformClickWallpaper(int x, int y)
-        //{
-        //    IntPtr flash = this.PlayerHandle;
-        //    if (flash != IntPtr.Zero)
-        //    {
-        //        IntPtr result = IntPtr.Zero;
-
-        //        // 첫번째 이벤트에서 포커스를 잠깐 얻고
-        //        WinApi.SendMessageTimeout(flash, 0x202/*UP*/, new IntPtr(1), new IntPtr(WinApi.MakeParam(y, x)),
-        //            WinApi.SendMessageTimeoutFlags.SMTO_NORMAL, 0, out result);
-
-        //        // 두번째 클릭에서 실제로 클릭이 처리되게 하게끔 함.
-        //        WinApi.SendMessageTimeout(flash, 0x201/*DOWN*/, new IntPtr(1), new IntPtr(WinApi.MakeParam(y, x)),
-        //                WinApi.SendMessageTimeoutFlags.SMTO_NORMAL, 0, out result);
-        //        WinApi.SendMessageTimeout(flash, 0x202/*UP*/, new IntPtr(1), new IntPtr(WinApi.MakeParam(y, x)),
-        //            WinApi.SendMessageTimeoutFlags.SMTO_NORMAL, 0, out result);
-        //    }
-        //}
 
         public void TogglePlay()
         {
@@ -315,51 +303,6 @@ namespace YoutubeWallpaper
             {
                 PinToBackground();
             }
-
-            /*
-            // 배경이 다른 프로그램에 의해 가려졌고
-            if (ScreenUtility.IsOverlayed(this))
-            {
-                // 이번이 처음으로 가려진거면
-                if (m_wasOverlayed == false)
-                {
-                    m_wasOverlayed = true;
-
-                    if (this.AutoMute)
-                    {
-                        // 음소거
-                        WinApi.waveOutSetVolume(IntPtr.Zero, 0);
-                    }
-
-                    if (this.AutoTogglePlay)
-                    {
-                        // 일시정지
-                        TogglePlay();
-                    }
-                }
-            }
-            else if (m_wasOverlayed)
-            {
-                // 가려지지 않았고 이전에 가려진적이 있었으면
-
-                m_wasOverlayed = false;
-
-                // 볼륨 복구
-                this.Volume = m_latestVolume;
-
-                if (this.AutoTogglePlay)
-                {
-                    // 재생
-                    TogglePlay();
-                }
-            }
-            */
-        }
-
-
-        private void Form_Wallpaper_Load_1(object sender, EventArgs e)
-        {
-
         }
 
         private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
@@ -369,6 +312,13 @@ namespace YoutubeWallpaper
 
         private void axWindowsMediaPlayer1_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
         {
+            if (axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsMediaEnded)
+            {
+               // if (axWindowsMediaPlayer1.Ctlcontrols.currentPosition == axWindowsMediaPlayer1.currentMedia.duration)
+               // {
+                    MessageBox.Show("Play Ended");
+               // }
+            }
 
         }
     }
