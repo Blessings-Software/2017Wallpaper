@@ -483,6 +483,8 @@ namespace YoutubeWallpaper
             SaveOption();
             //RecentData.Recent.Add(listView1.SelectedItems[0].Text,listView1.SelectedItems[0].Name); //Title, VideoID
             StopWallpaper();
+            //listView2.Items.Add("");
+            listView2.Items.Add(textBox_id.Text, textBox1.Text, 0);
             PlayWallpaper();
         }
 
@@ -672,6 +674,7 @@ namespace YoutubeWallpaper
                 //string youtubeUrl = "http://youtube.com/watch?v=" + videoId;
 
                 textBox_id.Text = videoId;
+                textBox1.Text = listView1.SelectedItems[0].Text;
             }
         }
         private string videopath = "";
@@ -753,10 +756,20 @@ namespace YoutubeWallpaper
         {
             if(listView2.SelectedItems.Count > 0)
             {
-                videopath = listView2.SelectedItems[0].Text;
-                label2.Text = videopath;
-                lblVTitle.Text = Path.GetFileNameWithoutExtension(videopath);
-                lblVDuration.Text = Duration(videopath).ToString();
+                //선택된 아이템이 Video 타입인 경우
+                if (listView2.SelectedItems[0].Name == "" || listView2.SelectedItems[0].Name == null)
+                {
+                    videopath = listView2.SelectedItems[0].Text;
+                    label2.Text = videopath;
+                    lblVTitle.Text = Path.GetFileNameWithoutExtension(videopath);
+                    lblVDuration.Text = Duration(videopath).ToString();
+                    tabControl1.SelectedIndex = 1;
+                }
+                else //선택된 아이템이 Youtube 타입인 경우
+                {
+                    textBox_id.Text = listView2.SelectedItems[0].Name;
+                    tabControl1.SelectedIndex = 0;
+                }
             }
         }
     }
