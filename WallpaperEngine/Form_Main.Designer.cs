@@ -77,14 +77,14 @@
             this.button1 = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.lblVDuration = new System.Windows.Forms.Label();
             this.lblVTitle = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.listView2 = new System.Windows.Forms.ListView();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.trkVideoVolume = new System.Windows.Forms.TrackBar();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -93,9 +93,12 @@
             this.btnOpen = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.listView2 = new System.Windows.Forms.ListView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -107,12 +110,14 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.groupBox10.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trkVideoVolume)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -141,6 +146,7 @@
             this.radioButton_type_list.Text = "Playlist";
             this.toolTip_help.SetToolTip(this.radioButton_type_list, "하나 이상의 영상을 가지는 재생목록.");
             this.radioButton_type_list.UseVisualStyleBackColor = true;
+            this.radioButton_type_list.CheckedChanged += new System.EventHandler(this.radioButton_type_list_CheckedChanged);
             // 
             // radioButton_type_one
             // 
@@ -310,7 +316,7 @@
             this.menuStrip_top.Location = new System.Drawing.Point(0, 0);
             this.menuStrip_top.Name = "menuStrip_top";
             this.menuStrip_top.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip_top.Size = new System.Drawing.Size(591, 24);
+            this.menuStrip_top.Size = new System.Drawing.Size(589, 24);
             this.menuStrip_top.TabIndex = 5;
             this.menuStrip_top.Text = "menuStrip1";
             // 
@@ -605,6 +611,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.groupBox10);
             this.tabPage2.Controls.Add(this.groupBox9);
             this.tabPage2.Controls.Add(this.groupBox8);
             this.tabPage2.Controls.Add(this.groupBox7);
@@ -618,13 +625,33 @@
             this.tabPage2.Text = "Video";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.checkBox1);
+            this.groupBox10.Location = new System.Drawing.Point(8, 271);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(294, 67);
+            this.groupBox10.TabIndex = 9;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Settings";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(14, 20);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(63, 16);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "Repeat";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // groupBox9
             // 
             this.groupBox9.Controls.Add(this.lblVDuration);
             this.groupBox9.Controls.Add(this.lblVTitle);
             this.groupBox9.Location = new System.Drawing.Point(8, 217);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(294, 92);
+            this.groupBox9.Size = new System.Drawing.Size(294, 47);
             this.groupBox9.TabIndex = 8;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Video Information";
@@ -632,7 +659,7 @@
             // lblVDuration
             // 
             this.lblVDuration.AutoSize = true;
-            this.lblVDuration.Location = new System.Drawing.Point(12, 43);
+            this.lblVDuration.Location = new System.Drawing.Point(12, 29);
             this.lblVDuration.Name = "lblVDuration";
             this.lblVDuration.Size = new System.Drawing.Size(87, 12);
             this.lblVDuration.TabIndex = 1;
@@ -677,26 +704,6 @@
             this.button3.Text = "Pause";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 11);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 12);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Recent Video";
-            // 
-            // listView2
-            // 
-            this.listView2.Location = new System.Drawing.Point(5, 26);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(558, 315);
-            this.listView2.TabIndex = 5;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.List;
-            this.listView2.SelectedIndexChanged += new System.EventHandler(this.listView2_SelectedIndexChanged);
-            this.listView2.DoubleClick += new System.EventHandler(this.listView2_DoubleClick);
             // 
             // groupBox7
             // 
@@ -760,9 +767,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(8, 315);
+            this.button2.Location = new System.Drawing.Point(308, 315);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(252, 23);
             this.button2.TabIndex = 1;
             this.button2.Text = "Start";
             this.button2.UseVisualStyleBackColor = true;
@@ -779,8 +786,29 @@
             this.tabPage3.Text = "Recent Videos";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 11);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 12);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Recent Video";
+            // 
+            // listView2
+            // 
+            this.listView2.Location = new System.Drawing.Point(5, 26);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(558, 315);
+            this.listView2.TabIndex = 5;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.View = System.Windows.Forms.View.List;
+            this.listView2.SelectedIndexChanged += new System.EventHandler(this.listView2_SelectedIndexChanged);
+            this.listView2.DoubleClick += new System.EventHandler(this.listView2_DoubleClick);
+            // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.label4);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(566, 344);
@@ -794,17 +822,26 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(569, 404);
+            this.textBox1.Location = new System.Drawing.Point(730, 339);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(10, 21);
             this.textBox1.TabIndex = 7;
             this.textBox1.Visible = false;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 11);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 12);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "label4";
+            // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(591, 414);
+            this.ClientSize = new System.Drawing.Size(589, 414);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip_top);
@@ -836,6 +873,8 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             this.groupBox8.ResumeLayout(false);
@@ -846,6 +885,8 @@
             this.groupBox6.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -919,6 +960,9 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label4;
     }
 }
 

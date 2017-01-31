@@ -127,7 +127,7 @@ namespace YoutubeWallpaper
             {
                 // embed 태그가 원하는대로 작동하지 않으니 v 태그를 사용하되
                 // 아주 짧은 영상(Q3HPz3h-_AE)을 먼저 재생하고 자동으로 다음에 재생될 영상을
-                // 유저가 설정한 재생목록으로 해두면 v 태그로 재생목록도 재생 가능!
+                // 유저가 설정한 재생목록으로 해두면 v 태그로 재생목록도 재생 가능
                 url.Append(@"v/Q3HPz3h-_AE?listType=playlist&index=0&list=");
                 url.Append(m_option.Id);
             }
@@ -771,6 +771,11 @@ namespace YoutubeWallpaper
                     tabControl1.SelectedIndex = 0;
                 }
             }
+        }
+
+        private void radioButton_type_list_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
