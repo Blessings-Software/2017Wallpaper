@@ -54,6 +54,18 @@ namespace YoutubeWallpaper
                 }
             }
         }
+        private bool m_IsGIF = false;
+        public bool IsGIF
+        {
+            get
+            {
+                return m_IsGIF;
+            }
+            set
+            {
+                m_IsGIF = value;
+            }
+        }
         private bool m_isFixed = false;
         public bool IsFixed
         { get { return m_isFixed; } }

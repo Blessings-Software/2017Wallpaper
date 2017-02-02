@@ -14,6 +14,7 @@ using System.Diagnostics;
 using Google.Apis.YouTube.v3;
 using Google.Apis.Services;
 using WMPLib;
+using System.Drawing.Imaging;
 
 namespace YoutubeWallpaper
 {
@@ -681,6 +682,14 @@ namespace YoutubeWallpaper
         private void btnOpen_Click(object sender, EventArgs e)
         {
             openFileDialog1.ShowDialog();
+            //#################################################
+            //Temp Routine
+            Image img = new Bitmap(openFileDialog1.FileName);
+            PropertyItem item = img.GetPropertyItem(0x5100); // FrameDelay in libgdiplus
+                                                             // Time is in 1/100ths of a second
+            int delay = (item.Value[0] + item.Value[1] * 256) * 10;
+            //#################################################
+            
             videopath = openFileDialog1.FileName;
             label2.Text = videopath;
             //lblVTitle
